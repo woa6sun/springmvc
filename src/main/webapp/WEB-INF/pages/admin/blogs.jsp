@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="/WEB-INF/pages/path.jsp" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -32,12 +34,12 @@
     <h1>SpringMVC 博客系统-博客管理</h1>
     <hr/>
 
-    <h3>所有博客 <a href="/admin/blogs/add" type="button" class="btn btn-primary btn-sm">添加</a></h3>
+    <h3>所有博客 <a href="${path }/admin/blogs/add" type="button" class="btn btn-primary btn-sm">添加</a></h3>
 
     <!-- 如果博文列表为空 -->
     <c:if test="${empty blogList}">
         <div class="alert alert-warning" role="alert">
-            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>Blog表为空，请<a href="/admin/blogs/add" type="button" class="btn btn-primary btn-sm">添加</a>
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>Blog表为空，请<a href="${path }/admin/blogs/add" type="button" class="btn btn-primary btn-sm">添加</a>
         </div>
     </c:if>
 
@@ -59,9 +61,9 @@
                     <td>${blog.userByUserId.nickname}, ${blog.userByUserId.firstName} ${blog.userByUserId.lastName}</td>
                     <td><fmt:formatDate value="${blog.pubDate }" pattern="yyyy-MM-dd"/></td>
                     <td>
-                        <a href="/admin/blogs/show/${blog.id}" type="button" class="btn btn-sm btn-success">详情</a>
-                        <a href="/admin/blogs/update/${blog.id}" type="button" class="btn btn-sm btn-warning">修改</a>
-                        <a href="/admin/blogs/delete/${blog.id}" type="button" onclick="return confirm('确定删除吗？')" class="btn btn-sm btn-danger">删除</a>
+                        <a href="${path }/admin/blogs/show/${blog.id}" type="button" class="btn btn-sm btn-success">详情</a>
+                        <a href="${path }/admin/blogs/update/${blog.id}" type="button" class="btn btn-sm btn-warning">修改</a>
+                        <a href="${path }/admin/blogs/delete/${blog.id}" type="button" onclick="return confirm('确定删除吗？')" class="btn btn-sm btn-danger">删除</a>
                     </td>
                 </tr>
             </c:forEach>

@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/WEB-INF/pages/path.jsp" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,16 +21,21 @@
     <![endif]-->
 </head>
 <body>
-<h1>这里是SpringMVC Demo首页</h1>
+<h1>这里是SpringMVC Demo首页sunguoliang</h1>
 
 <h3>出现此页面，说明配置成功。</h3>
 
 
 
-<h3>SpringMVC 博客系统-用户管理<a href="/admin/users" type="button" class="btn btn-sm btn-success">详情</a></h3>
+<h3>SpringMVC 博客系统-用户管理<a href="${path }/admin/users" type="button" class="btn btn-sm btn-success">详情</a></h3>
 
 
-<h3>SpringMVC 博客系统-博客管理<a href="/admin/blogs" type="button" class="btn btn-sm btn-success">详情</a></h3>
+<h3>SpringMVC 博客系统-博客管理<a href="${basePath }/admin/blogs" type="button" class="btn btn-sm btn-success">详情</a></h3>
+
+<label>path:</label><input type="text" value="${path }" />
+<br>
+<label>basePath:</label><input type="text" value="${basePath }" />
+<br>
 
 
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->

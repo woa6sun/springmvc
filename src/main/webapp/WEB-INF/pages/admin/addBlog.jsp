@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/WEB-INF/pages/path.jsp" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -31,7 +33,7 @@
 <div class="container">
     <h1>SpringMVC 添加博客</h1>
     <hr/>
-    <form:form action="/admin/blogs/addP" method="post" commandName="blog" role="form">
+    <form:form action="${path }/admin/blogs/addP" method="post" commandName="blog" role="form">
         <div class="form-group">
             <label for="title">Title:</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title:"/>

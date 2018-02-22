@@ -7,6 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ include file="/WEB-INF/pages/path.jsp" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -30,7 +32,7 @@
 <div class="container">
     <h1>SpringMVC 添加用户</h1>
     <hr/>
-    <form:form action="/admin/users/addP" method="post" commandName="user" role="form">
+    <form:form action="${path }/admin/users/addP" method="post" commandName="user" role="form">
         <div class="form-group">
             <label for="firstName">Nickname:</label>
             <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Enter Nickname:"/>
